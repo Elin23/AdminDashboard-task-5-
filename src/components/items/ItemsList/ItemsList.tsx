@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SignInForm() {
+function ItemsList() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function SignInForm() {
   )
 }
 
-export default SignInForm
+export default ItemsList

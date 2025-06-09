@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jaro:opsz@6..72&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 :root {
   --primary-color: #FEAF00;
@@ -10,4 +12,27 @@
   --gray-color-02: #CDCDCD;
   --gray-color-03: #FDFDFD;
 }
-
+.fs-12{
+  font-size: 12px !important;
+}
+.fs-14{
+  font-size: 14px !important; 
+}
+.gap-20{
+  gap: 20px;
+}
+.rounded-4px{
+  border-radius: 4px !important;
+}
+.bg-primary-color{
+  background-color: var(--primary-color) !important;
+}
+.bg-secondary-color{
+  background-color: var(--secondary-color) !important;
+}
+.color-primary{
+  color: var(--primary-color);
+}
+.color-gray-01{
+  color: var(--gray-color-01);
+}

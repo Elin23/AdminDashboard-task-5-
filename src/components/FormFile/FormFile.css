@@ -1,0 +1,7 @@
+.uploading-area{
+    background-color: #F8F8FF;
+    border-color: #384EB74D !important;
+    border-style: dashed !important;
+    height: 100px;
+    cursor: pointer;
+}
