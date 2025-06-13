@@ -1,0 +1,17 @@
+.show-container{
+    padding-left: 64px;
+    padding-right: 64px;
+    
+}
+.product-details{
+    padding-top: 76px;
+    gap: 40px;
+}
+.product-image-detail{
+    width: 373px;
+    height: 373px;
+    
+}
+.details-row{
+    height: 73px;
+}

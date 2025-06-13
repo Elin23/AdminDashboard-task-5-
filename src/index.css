@@ -11,6 +11,8 @@
   --gray-color-01:  #6C6C6C;
   --gray-color-02: #CDCDCD;
   --gray-color-03: #FDFDFD;
+  --gray-color-04: #8080808C;
+  
 }
 .fs-12{
   font-size: 12px !important;
@@ -18,11 +20,23 @@
 .fs-14{
   font-size: 14px !important; 
 }
+.fs-17{
+  font-size: 17px;
+}
+.fs-60{
+  font-size: 60px;
+}
+.fs-40{
+  font-size: 40px;
+}
 .gap-20{
   gap: 20px;
 }
 .rounded-4px{
   border-radius: 4px !important;
+}
+.rounded-16px{
+  border-radius: 16px;
 }
 .bg-primary-color{
   background-color: var(--primary-color) !important;
@@ -35,4 +49,14 @@
 }
 .color-gray-01{
   color: var(--gray-color-01);
+}
+.color-gray-transparent {
+  color: var(--gray-color-04);
+}
+::placeholder {
+  color: var( --gray-color-02) !important; 
+}
+input:focus {
+  border-color: var(--primary-color) !important; 
+  box-shadow: 0 0 0 0.25rem rgba(236, 185, 31, 0.25) !important;
 }

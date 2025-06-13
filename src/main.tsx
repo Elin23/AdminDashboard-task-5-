@@ -10,6 +10,7 @@ import AdminLayout from './layouts/AdminLayout/AdminLayout';
 import ItemsList from './components/items/ItemsList/ItemsList';
 import ItemsCreate from './components/items/ItemsCreate/ItemsCreate';
 import ItemsEdit from './components/items/ItemsEdit/ItemsEdit';
+import ShowItem from './components/items/ShowItem/ShowItem';
 
 const verifyPermissions = (element: JSX.Element) => {
   const token = localStorage.getItem("token");
@@ -29,9 +30,11 @@ const router = createBrowserRouter([
     path: "/",
     element: verifyPermissions(<AdminLayout />),
     children: [
+      { index: true, element: <Navigate to="products" replace /> },
       { path: "products", element: <ItemsList /> },
       { path: "products/new", element: <ItemsCreate /> },
       { path: "products/:id/edit", element: <ItemsEdit /> },
+      { path: "products/:id/show", element: <ShowItem /> }
     ]
   }
 ],{

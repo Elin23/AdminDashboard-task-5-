@@ -1,0 +1,28 @@
+.items-section-container{
+    padding-left: 109px;
+    padding-right: 109px;
+}
+.items-container{
+    padding: 32px 0;
+    gap: 40px;
+}
+.product-card{
+    width: 208px;
+    height: 208px ;
+    box-shadow: 8px 8px 4px 0px #00000040;
+    cursor: pointer;
+}
+.product-name{
+    font-size: 30px;
+}
+.product-card img{
+    object-fit: contain
+}
+.product-card:hover .hover-effect{
+    display: flex !important;
+    background-color: #f2eae1a0;
+    gap: 32px;
+}
+.card-buttons .btn{
+    width: 81px !important;
+}

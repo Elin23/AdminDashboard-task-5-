@@ -1,25 +1,24 @@
-.offcanvas {
-    background-color: var(--secondary-color);
-    width: 270px !important;
-    border: none !important;
-    padding: 35px 44px;
+.sidebar-wrapper  {
+    min-width: 270px !important;
+    padding: 31px 38px;
 }
-
-.offcanvas-title {
+.sidebar-logo {
     border-left: 4px solid #F8D442;
     padding-left: 12px;
-    margin-bottom: 54px;
 }
-
-.offcanvas-title img {
+.sidebar-logo img {
     width: 84.8px;
     height: 23px;
 }
-
-.user-name {
-    font-size: 17px;
-}
-
 .user-image {
     width: 141px;
+}
+.sidebar-content{
+    height: 55.22%; 
+}
+.sidebar-nav{
+    gap: 19px ;
+}
+.nav-link{
+    gap: 12px;
 }

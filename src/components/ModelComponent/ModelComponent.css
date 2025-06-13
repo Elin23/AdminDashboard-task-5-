@@ -1,0 +1,29 @@
+.alert-modal {
+    max-width: 65.83% !important;
+}
+
+.modal-content {
+    border-radius: 20px !important;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.modal-body {
+    font-size: 22px;
+    padding-bottom: 80px !important;
+}
+
+.modal-footer {
+    gap: 13%;
+}
+
+.modal-footer button {
+    padding: 11px 72px !important;
+
+}
+.modal-backdrop-blur {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    opacity: 1 !important;
+}
