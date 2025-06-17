@@ -20,7 +20,21 @@ const AuthService = {
       password,
     });
     return response.data;
-  }
+  },
+
+  async logout(token: string) {
+    const response = await axios.post(
+      `${url}/logout`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/json',
+        },
+      }
+    );
+    return response.data;
+  },
 };
 
 export default AuthService;

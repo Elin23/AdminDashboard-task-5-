@@ -6,6 +6,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ModelComponent from '../ModelComponent/ModelComponent';
 import Loader from '../Loader/Loader';
+import * as XLSX from 'xlsx';
+import * as FileSaver from 'file-saver';
+import { fetchProductsService } from '../../services/FetchProductsServices';
+import AuthService from '../../services/AuthService';
 
 interface NavItem {
   to: string;
@@ -31,12 +35,9 @@ function Sidebar({ logo, navItems }: SidebarProps) {
   const handleLogout = async () => {
     try {
       setLoading(true);
-      await axios.post('https://web-production-3ca4c.up.railway.app/api/logout', {}, {
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      if (token) {
+        await AuthService.logout(token);
+      }
     } catch (error) {
       console.error('Logout error:', error);
     } finally {
@@ -59,6 +60,38 @@ function Sidebar({ logo, navItems }: SidebarProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // note: I added this function which lets the user generate a report of all products 
+  // The report includes product details like name price creation and update dates
+  // and adds the current date as the report date.
+  // It generates an Excel file that the user can download before log out
+
+  const generateProductsReport = async () => {
+    try {
+      const products = await fetchProductsService();
+
+      const today = new Date().toLocaleDateString('en-GB');
+
+      const formattedData = products.map((product: any) => ({
+        Name: product.name,
+        Price: product.price,
+        'Created At': product.created_at ? product.created_at.slice(0, 10) : 'N/A',
+        'Updated At': product.updated_at ? product.updated_at.slice(0, 10) : 'N/A',
+        'Report Date': today,
+      }));
+
+      const worksheet = XLSX.utils.json_to_sheet(formattedData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Products Report');
+
+      const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+      const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+      FileSaver.saveAs(blob, `Products_Report_${today.replace(/\//g, '-')}.xlsx`);
+    } catch (err) {
+      console.error("Failed to generate report:", err);
+    }
+  };
+
   return (
     <>
       {loading && <Loader />}
@@ -76,24 +109,17 @@ function Sidebar({ logo, navItems }: SidebarProps) {
             <img src="/AdminDashboard-task-5-/assets/icons/close.svg" alt="icon" />
           </Button>
         )}
-
         <div className="sidebar-logo mt-4">
           <img src={logo} alt="logo" />
         </div>
-
         <Stack gap={3} className="d-flex align-items-center justify-content-center">
           <div className="user-image">
-            <Image
-              roundedCircle
-              src={user?.profileImage}
-              className="w-100 h-100 object-fit-cover"
-            />
+            <Image roundedCircle src={user?.profileImage} className="w-100 h-100 object-fit-cover" />
           </div>
           <div className="fs-17 text-center fw-bold">
             {user?.firstName} {user?.lastName}
           </div>
         </Stack>
-
         <div className="sidebar-content w-100 d-flex flex-column justify-content-between">
           <Nav className="sidebar-nav flex-column align-items-center">
             {navItems.map((item, index) => (
@@ -101,25 +127,18 @@ function Sidebar({ logo, navItems }: SidebarProps) {
                 key={index}
                 to={item.to}
                 className={({ isActive }) =>
-                  `nav-link d-flex align-items-center justify-content-center text-dark fw-medium rounded-4px w-100 py-2 ${isActive ? 'bg-primary-color' : ''
-                  }`
-                }
-              >
+                  `nav-link d-flex align-items-center justify-content-center text-dark fw-medium rounded-4px w-100 py-2 ${isActive ? 'bg-primary-color' : ''}`}>
                 <img src={item.icon} alt={item.label} />
                 <span className="fs-17">{item.label}</span>
               </NavLink>
             ))}
           </Nav>
 
-          <button
-            onClick={() => setShowLogoutAlert(true)}
-            className="fw-medium border-0 bg-transparent d-flex align-items-center justify-content-center gap-4"
-          >
+          <button onClick={() => setShowLogoutAlert(true)} className="fw-medium border-0 bg-transparent d-flex align-items-center justify-content-center gap-4">
             Logout <img src="/AdminDashboard-task-5-/assets/icons/sign-out.svg" alt="logout icon" />
           </button>
         </div>
       </div>
-
 
       <ModelComponent
         show={showLogoutAlert}
@@ -129,12 +148,15 @@ function Sidebar({ logo, navItems }: SidebarProps) {
           setShowLogoutAlert(false);
         }}
         title="Confirm Logout"
-        body="Are you sure you want to log out?"
-        close="Cancel"
-        confirm="Logout"
-        closeStyle="bg-primary-color"
-        confirmStyle="btn-danger"
-      />
+        body={
+          <>
+            <p>Are you sure you want to log out?</p>
+            <button onClick={generateProductsReport} className="btn btn-link text-decoration-underline text-primary fs-6">
+              Generate product report before logout
+            </button>
+          </>
+        }
+        close="Cancel" confirm="Logout" closeStyle="bg-primary-color" confirmStyle="btn-danger"/>
     </>
   );
 }

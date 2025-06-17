@@ -6,7 +6,7 @@ interface ModelProps {
     onClose: () => void;
     onConfirm: () => void;
     title?: string;
-    body: string;
+    body: React.ReactNode;
     close: string;
     confirm: string;
     closeStyle?: string;
