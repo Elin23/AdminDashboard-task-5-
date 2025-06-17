@@ -10,7 +10,6 @@ function AdminLayout() {
   return (
     <div className="d-flex">
       <Sidebar logo="/AdminDashboard-task-5-/assets/imgs/logo.png" navItems={navItems}/>
-
       <Outlet />
     </div>
   )

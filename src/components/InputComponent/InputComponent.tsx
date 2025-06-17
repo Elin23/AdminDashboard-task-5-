@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
-import './AuthInput.css'
+import './InputComponent.css'
 
-type AuthInputProps = {
+type InputProps = {
     label?: string;
     className: string;
     placeholder: string;
@@ -11,11 +11,12 @@ type AuthInputProps = {
     required?: boolean;
     error?: string;
     controlId: string;
+    fontSize: string;
 }
-function AuthInput({ label, className, placeholder, type, value, onChange, required = false, error, controlId }: AuthInputProps) {
+function InputComponent({ label, className, placeholder, type, value, onChange, required = false, error, controlId, fontSize }: InputProps) {
     return (
         <Form.Group className={`${className}`} controlId={controlId}>
-            <Form.Label className='input-field-label fw-medium fs-14 color-gray-01'>{label}</Form.Label>
+            <Form.Label className={`input-field-label fw-medium color-gray-01 ${fontSize}`}>{label}</Form.Label>
             <Form.Control className='input-field fs-12 rounded-4px' type={type} placeholder={placeholder} value={value} required={required} onChange={onChange} isInvalid={!!error} />
             {/* note: the (!!) are used to convert a value to a boolean (true or false)*/}
             {error && <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>}
@@ -23,4 +24,4 @@ function AuthInput({ label, className, placeholder, type, value, onChange, requi
     )
 }
 
-export default AuthInput
+export default InputComponent

@@ -5,3 +5,9 @@
     height: 100px;
     cursor: pointer;
 }
+.uploading-area.lg{
+    height: 209px !important;
+}
+img.lg{
+    width: 24%;
+}

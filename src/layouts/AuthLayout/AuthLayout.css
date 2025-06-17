@@ -3,12 +3,11 @@
 }
 .auth-form{
     width: 450px;
-    padding: 42px 30px;
+    padding: 4.7dvh 30px 2.6dvh 30px;
     border-radius: 20px;   
 }
 .auth-content{
-    gap: 43px;
-    /* margin-bottom: 50px; */
+    gap: 4dvh;
 }
 .auth-label{
     font-size: 22px;

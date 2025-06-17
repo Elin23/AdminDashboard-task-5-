@@ -1,4 +1,36 @@
-.btn-w-20{
+.btn-w-20 {
     width: 20.9%;
-    height: 44px;
+}
+
+.btn-h-44 {
+    height: 4.88dvh;
+}
+
+.bg-primary-color:hover {
+    background-color: #dfa31f !important;
+}
+
+.button-component:active {
+    transform: scale(0.97) !important;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom_margin {
+    margin-top: 5.05dvh;
+}
+
+@media (max-width: 1200px) {
+    .btn-w-20 {
+        width: 37.9%;
+    }
+}
+@media (max-width: 540px){
+    .btn-w-20 {
+        width: 55%;
+    }
+}
+@media (max-width: 390px) {
+    .btn-w-20 {
+        width: 65%;
+    }
 }

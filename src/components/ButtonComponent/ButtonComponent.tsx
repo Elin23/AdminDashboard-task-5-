@@ -5,10 +5,11 @@ type CustomButtonProps = {
   variant?: 'primary' | 'secondary' | 'danger' ;
   className?: string;
   label?: string;
-  onClickEvent: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClickEvent?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: 'button' | 'submit' | 'reset'; 
 } 
 
-function ButtonComponent({ children, variant = 'primary', className='', onClickEvent, label='' }: CustomButtonProps) {
+function ButtonComponent({ children, variant = 'primary', className='', onClickEvent, label='', type = 'button' }: CustomButtonProps) {
   const variantClass = {
     primary: 'btn bg-primary-color',
     secondary: 'btn btn-secondary',
@@ -16,7 +17,7 @@ function ButtonComponent({ children, variant = 'primary', className='', onClickE
   }[variant];
 
   return (
-    <button className={`rounded-4px text-light ${variantClass} ${className ?? ''}`} onClick={onClickEvent}>
+    <button className={`button-component rounded-4px text-light ${variantClass} ${className ?? ''}`} onClick={onClickEvent} type={type}>
         {label}
       {children}
     </button>

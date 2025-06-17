@@ -1,5 +1,5 @@
 .signin-form{
-    margin-top: 50px;
+    margin-top: 5.5dvh;
 }
 .form-button.signin{
     margin-top: 30px;
@@ -7,5 +7,5 @@
 }
 .form-button.signup{
     margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 2.6dvh;
 }

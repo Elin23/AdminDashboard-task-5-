@@ -25,7 +25,7 @@ function AuthLayout({ logo }: AuthLayoutProps) {
 
   return (
     <Container fluid className="auth-layout vh-100 d-flex justify-content-center align-items-center">
-      <div className="auth-form bg-white p-4 rounded-4 shadow">
+      <div className="auth-form bg-white rounded-4 shadow">
         <Stack className="auth-content">
           <img src={logo} alt="Logo" className="mx-auto" />
           <Stack className="text-center">

@@ -1,0 +1,9 @@
+@media (max-width: 549px) {
+    .form-col{
+        gap: 10px;
+    }
+    .form-row{
+        flex-direction: column;
+        gap: 10px;
+    }
+}

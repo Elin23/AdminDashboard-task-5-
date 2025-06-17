@@ -16,7 +16,7 @@ function SearchBar({onSearch}: SearchBarProps) {
                     placeholder="Search product by name"
                     onChange={handleChange}
                     className='border-end-0' />
-                <Button variant='transparent' className='bg-transparent border border-start-0'>
+                <Button variant='transparent' className='search-btn bg-transparent border border-start-0'>
                     <img src="/AdminDashboard-task-5-/assets/icons/search.png" alt="search" />
                 </Button>
             </InputGroup>

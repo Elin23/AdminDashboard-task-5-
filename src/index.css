@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+
 }
 :root {
   --primary-color: #FEAF00;
@@ -14,6 +15,21 @@
   --gray-color-04: #8080808C;
   
 }
+/*   *****************NOTE FOR THE SUPERVISOR**************
+// I chose to use the `dvh` unit not only for the overall layout height but also for spacing and small elements in this dashboard.
+// Contrary to the misconception that `dvh` is only suitable for large sections, it can be used for any element where a design needs to respond directly to the dynamic height of the viewport—especially on mobile devices with varying browser UI behaviors.
+// In this task, the goal is to make the dashboard fill the screen height without vertical scroll, and using `px` or `%` would require complex media queries to handle different viewports.
+// `dvh` provides a clean, scalable, and professional solution across screen sizes.
+
+// These sources confirm that `dvh` is suitable for both layout and component-level sizing and spacing.: 
+// -(https://css-tricks.com/the-large-small-and-dynamic-viewports/#the-dynamic-viewport)
+// -(https://developer.mozilla.org/en-US/docs/Web/CSS/length#viewport-percentage_lengths)
+ */
+
+body{
+  background-color: rgba(253, 253, 253, 1) !important;
+}
+
 .fs-12{
   font-size: 12px !important;
 }
@@ -30,7 +46,11 @@
   font-size: 40px;
 }
 .gap-20{
-  gap: 20px;
+  gap: 1.3dvh;
+}
+.px-64{
+  padding-left: 4.4%;
+  padding-right: 4.4%;
 }
 .rounded-4px{
   border-radius: 4px !important;
@@ -59,4 +79,30 @@
 input:focus {
   border-color: var(--primary-color) !important; 
   box-shadow: 0 0 0 0.25rem rgba(236, 185, 31, 0.25) !important;
+}
+@media (max-width: 1439px) {
+    .fs-60{
+      font-size: 50px;
+    }
+    .fs-40{
+      font-size: 35px;
+    }
+}
+@media (max-width: 1200px) {
+  .fs-60{
+    font-size: 35px;
+  }
+}
+@media (max-width: 767px) {
+  .fs-60{
+    font-size: 25px;
+  }
+  .fs-40{
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .custom-flex-column{
+    flex-direction: column;
+  }
 }

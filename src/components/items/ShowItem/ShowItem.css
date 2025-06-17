@@ -1,17 +1,21 @@
 .show-container{
-    padding-left: 64px;
-    padding-right: 64px;
-    
+    padding-top: 2.7dvh;
+    padding-bottom: 5.3dvh;
 }
 .product-details{
-    padding-top: 76px;
-    gap: 40px;
+    padding-top: 6dvh;
+    row-gap: 4dvh;
 }
 .product-image-detail{
-    width: 373px;
-    height: 373px;
-    
+    width: auto;
+    height: 41dvh;
 }
 .details-row{
-    height: 73px;
+    height: 8.1dvh;
+}
+@media (max-width: 992px) {
+    .product-details{
+        padding-top: 4dvh;
+        row-gap: 2dvh;
+    }
 }

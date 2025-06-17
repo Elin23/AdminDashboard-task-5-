@@ -1,6 +1,13 @@
 .sidebar-wrapper  {
     min-width: 270px !important;
     padding: 31px 38px;
+    transition: transform 0.3s ease-in-out;
+}
+.sidebar-wrapper.hidden {
+    transform: translateX(-100%);
+  }
+.sidebar-wrapper.visible{
+    transform: translateX(0);
 }
 .sidebar-logo {
     border-left: 4px solid #F8D442;
@@ -12,6 +19,7 @@
 }
 .user-image {
     width: 141px;
+    height: 141px;
 }
 .sidebar-content{
     height: 55.22%; 
@@ -22,3 +30,12 @@
 .nav-link{
     gap: 12px;
 }
+
+@media (max-width: 992px) {
+    .sidebar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2000; 
+    }
+  }
