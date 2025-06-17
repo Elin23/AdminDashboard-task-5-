@@ -18,10 +18,14 @@ function FormFile({ label = "Profile image", onChange, className, defaultImage, 
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
+    // note: I append timestamp to image URL to bypass browser cache and ensure fresh load,
+    // especially since the image might take time to load or don't appear
     if (defaultImage) {
-      setThumbnail(defaultImage);
+      const urlWithCacheBypass = `${defaultImage}?t=${new Date().getTime()}`;
+      setThumbnail(urlWithCacheBypass);
     }
   }, [defaultImage]);
+
 
   useEffect(() => {
     if (thumbnail) {

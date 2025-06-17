@@ -9,7 +9,7 @@ import { postProductService } from '../../../services/PostProductService';
 import { fetchProductsService } from '../../../services/FetchProductsServices';
 import Loader from '../../Loader/Loader';
 import NotificationComponent from '../../NotificationComponent/NotificationComponent';
-import './ItemsForm.css'
+
 type ItemFormProps = {
   pageTitle: string;
   buttonLabel: string;
@@ -97,8 +97,8 @@ function ItemsForm({ pageTitle, buttonLabel }: ItemFormProps) {
         <GoBackButton path='/' />
         <div className="product-details d-flex flex-column">
           <h3 className='fs-60 fw-bold m-0'>{pageTitle}</h3>
-          <Row className='form-row'>
-            <Col className='form-col d-flex justify-content-between flex-column'>
+          <Row>
+            <Col className='d-flex justify-content-between flex-column'>
               <InputComponent type='text' label='Name' fontSize='fs-2' value={name} className='col-12' error={errors.name}
                 placeholder="Enter name" required={true} onChange={(e) => setName(e.target.value)} controlId="formGroupName" />
               <InputComponent type='text' label='Price' fontSize='fs-2' value={price} className='col-12' error={errors.price}
