@@ -50,11 +50,8 @@ export default function PaginationComponent({currentPage, totalPages, goToNextPa
 
       {pageNumbers.map((page, index) =>
         typeof page === 'number' ? (
-          <div
-            key={index}
-            className={`circle d-flex align-items-center justify-content-center fw-semibold rounded-circle  ${page === currentPage ? 'bg-primary-color text-light' : ''} border border-1`}
-            onClick={() => goToPage(page)}
-          >
+          <div key={index} className={`circle d-flex align-items-center justify-content-center fw-semibold rounded-circle  ${page === currentPage ? 'bg-primary-color text-light' : ''} border border-1`}
+            onClick={() => goToPage(page)}>
             <span>{page}</span>
           </div>
         ) : (

@@ -59,7 +59,7 @@ function SignUpForm() {
 
       localStorage.setItem('token', data.data.token);
 
-      if (data?.data?.user) { // save the user info to use them in sidebar 
+      if (data?.data?.user) { // here I saved the user info to use them in sidebar 
         UserService.saveUserInfo({
           firstName: data.data.user.first_name,
           lastName: data.data.user.last_name,

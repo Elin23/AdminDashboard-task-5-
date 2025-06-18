@@ -48,7 +48,8 @@ function ShowItem() {
           <h3 className='fs-60 fw-bold m-0'>{product?.name}</h3>
 
           <div className="d-flex justify-content-center ">
-            <img src={product?.image_url} alt={product?.name} className='product-image-detail rounded-16px object-fit-contain' />
+            <img src={product?.image_url} alt={product?.name} className='product-image-detail rounded-16px object-fit-contain' 
+                 onError={(e) => {(e.target as HTMLImageElement).src = '/AdminDashboard-task-5-/assets/imgs/default-product.png';}}/>
           </div>
 
           <div className='custom-flex-column w-100 d-flex justify-content-between align-items-center'>

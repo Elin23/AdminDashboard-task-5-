@@ -1,5 +1,3 @@
-// src/services/AuthService.ts
-
 import axios from 'axios';
 
 const url = 'https://web-production-3ca4c.up.railway.app/api';

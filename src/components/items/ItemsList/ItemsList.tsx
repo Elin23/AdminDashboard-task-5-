@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './ItemsList.css'
-import axios from 'axios'
 import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { fetchProductsService } from '../../../services/FetchProductsServices';
@@ -10,6 +9,8 @@ import ButtonComponent from '../../ButtonComponent/ButtonComponent';
 import Loader from '../../Loader/Loader';
 import ModelComponent from '../../ModelComponent/ModelComponent';
 import PaginationComponent from '../../PaginationComponent/PaginationComponent';
+import { deleteProductService } from '../../../services/DeleteProductService';
+
 
 function ItemsList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -67,12 +68,7 @@ function ItemsList() {
   const confirmDelete = async () => {
     if (deletedProductId === null) return;
     try {
-      await axios.delete(`https://web-production-3ca4c.up.railway.app/api/items/${deletedProductId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/json'
-        }
-      });
+      await deleteProductService(deletedProductId, token!);
       setDeletedProductId(null);
       await fetchProducts();
     } catch (err) {

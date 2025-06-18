@@ -1,7 +1,5 @@
 .error-page {
     background-color: var(--secondary-color);
-    text-align: center;
-    padding: 2rem;
   }
   
   .animate-slide-in {
