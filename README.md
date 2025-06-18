@@ -9,6 +9,7 @@ A responsive and simple Admin Dashboard built with **React**, **TypeScript**, an
 - ✅ View all products
 - 📝 Edit products
 - ❌ Delete products
+- ✅ Add Products
 - 📄 Generate product reports (Excel format)
 - 🔐 User authentication:
   - Sign up
