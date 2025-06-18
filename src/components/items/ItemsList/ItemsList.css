@@ -41,6 +41,10 @@
         padding-left: 2%;
         padding-right: 2%;
     }
+    .product-card {
+        width: 180px;
+        height: 180px;
+    }
 }
 @media (max-width: 1200px) {
     .items-container {
