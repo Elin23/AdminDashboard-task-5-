@@ -67,7 +67,7 @@ function Sidebar({ logo, navItems }: SidebarProps) {
         </Button>
       )}
 
-      <div className={`sidebar-wrapper d-flex flex-column align-items-center justify-content-between vh-100 bg-secondary-color top-0 start-0 z-3  ${showSidebar ? 'visible' : 'hidden'}`}>
+      <div className={`sidebar-wrapper d-flex flex-column align-items-center justify-content-between bg-secondary-color top-0 start-0 z-3  ${showSidebar ? 'visible' : 'hidden'}`}>
 
         {isMobile && (
           <Button variant="light" onClick={() => setShowSidebar(false)} className="position-absolute top-0 end-0 m-2 bg-primary-color">

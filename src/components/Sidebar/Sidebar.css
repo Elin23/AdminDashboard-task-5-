@@ -2,6 +2,7 @@
     min-width: 270px !important;
     padding: 31px 38px;
     transition: transform 0.3s ease-in-out;
+    height: 100dvh;
 }
 .sidebar-wrapper.hidden {
     transform: translateX(-100%);
