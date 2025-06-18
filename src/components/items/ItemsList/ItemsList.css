@@ -42,8 +42,8 @@
         padding-right: 2%;
     }
     .product-card {
-        width: 180px;
-        height: 180px;
+        width: 175px;
+        height: 175px;
     }
 }
 @media (max-width: 1200px) {
