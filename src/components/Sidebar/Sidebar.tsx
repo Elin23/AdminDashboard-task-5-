@@ -66,7 +66,6 @@ function Sidebar({ logo, navItems }: SidebarProps) {
           <img src="/AdminDashboard-task-5-/assets/icons/burger_icon.svg" alt="icon" />
         </Button>
       )}
-
       <div className={`sidebar-wrapper d-flex flex-column align-items-center justify-content-between bg-secondary-color top-0 start-0 z-3  ${showSidebar ? 'visible' : 'hidden'}`}>
 
         {isMobile && (
