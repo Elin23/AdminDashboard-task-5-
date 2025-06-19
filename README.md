@@ -38,8 +38,8 @@ A responsive and simple Admin Dashboard built with **React**, **TypeScript**, an
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Elin23/AdminDashboard-task-5-
+   cd AdminDashboard-task-5-
 2. Install dependencies:
    ```bash
    npm i
@@ -49,4 +49,5 @@ A responsive and simple Admin Dashboard built with **React**, **TypeScript**, an
 For questions, suggestions, or collaborations:
 
 elinshaia23@gmail.com
+
 Made with 💙 by Ellin Shaia
